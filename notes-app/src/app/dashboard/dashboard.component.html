@@ -1,25 +1,41 @@
-<div style="margin-top: 200px">
-  <ul>
-    <li>name : {{user_name}}</li>
-    <li>number of notes: 18</li>
-    <li>email: {{email}}</li>
-  </ul>
-</div>
+<div class="content">
+  <div class="info" fxLayout="row" fxLayoutAlign="start center">
 
-<div>
-  <h2>Recent Notes</h2>
-  <ul>
-    <li>note 1t</li>
-    <li>note 1t</li>
-    <li>note 1t</li>
-  </ul>
-</div>
+    <div style="width: 100px; height: 100px; background: gray; margin-right: 30px; border-radius: 50%">
 
-<div>
-    <h2>Recent Friends</h2>
-    <ul>
-      <li>Friends 1t</li>
-      <li>Friends 1t</li>
-      <li>Friends 1t</li>
-    </ul>
+    </div>
+
+    <div>
+      <span class="mat-display-2"> {{user_name}}</span><br />
+      <span class="mat-body"> {{email}}</span>
+    </div>
+
+    <button class="create" mat-fab style="background-color: #880e4f; color: #fff" (click)="createNote()">
+        <mat-icon>add</mat-icon>
+    </button>
+
   </div>
+
+  
+
+  <div class="notes" *ngIf="notes.length !== 0; else nonotes">
+      <div class="mat-display-1" style="margin-bottom: 20px; text-align: center">Notes</div>
+    <div class="note" *ngFor="let note of notes">
+
+      <div class="mat-headline">{{note.name}}</div>
+      <div class="mat-body note-content">{{note.content}}</div>
+      <button mat-button style="color: #880e4f;margin-top: 15px; background: white" (click)="deleteNote(note.noteId)">
+        delete
+    </button>
+    <button mat-button style="color: #880e4f;margin-top: 15px;margin-left: 20px; background: white" (click)="viewNote(note.noteId)">
+      view
+  </button>
+
+    </div>
+  </div>
+
+  <ng-template #nonotes>
+      <div class="mat-headline" style="text-align: center; margin-top: 30px; color: rgba(100, 100, 100, 0.8)">No Notes Avialable...</div>
+    </ng-template>
+
+</div>

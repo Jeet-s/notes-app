@@ -5,5 +5,15 @@
     width: 100%;
     background-color: #fff;
     z-index: 999;
-    position: fixed;
+    top: 0;
+    left: 0;
+    position: relative;
+}
+.header-container{
+    position: relative;
+    width: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    height: 100%
 }

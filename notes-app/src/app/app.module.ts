@@ -6,11 +6,10 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { NotesComponent } from './notes/notes.component';
-import { CreateNoteComponent } from './notes/create-note/create-note.component';
+import { NotesComponent } from './note/note.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { MatFormFieldModule, MatInputModule, MatButtonModule, MatCardModule } from '@angular/material';
+import { MatFormFieldModule, MatInputModule, MatButtonModule, MatCardModule, MatIconModule } from '@angular/material';
 import { FlexLayoutModule } from "@angular/flex-layout";
 
 @NgModule({
@@ -19,8 +18,7 @@ import { FlexLayoutModule } from "@angular/flex-layout";
     LoginComponent,
     RegisterComponent,
     DashboardComponent,
-    NotesComponent,
-    CreateNoteComponent
+    NotesComponent
   ],
   imports: [
     BrowserModule,
@@ -31,6 +29,7 @@ import { FlexLayoutModule } from "@angular/flex-layout";
     MatButtonModule,
     FlexLayoutModule,
     MatCardModule,
+    MatIconModule,
 
     FormsModule
   ],

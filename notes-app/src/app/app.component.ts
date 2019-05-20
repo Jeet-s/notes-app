@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'notes-app';
+
+  constructor(private router: Router) { }
+
+  logout() {
+    localStorage.removeItem('username');
+    localStorage.removeItem('email');
+    localStorage.removeItem('userid');
+    this.router.navigate(['login']);
+  }
 }

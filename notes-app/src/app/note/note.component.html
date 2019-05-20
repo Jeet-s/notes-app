@@ -1,0 +1,20 @@
+<div class="content">
+    
+    <div class="info"  style=" padding:24px 42px; margin-top:50px" fxLayout="column" fxLayoutAlign="start stretch">
+        <div class="mat-display-1" style="margin: 0; text-align: center; padding-bottom:20px">{{heading}}</div>
+        <mat-form-field style="font-size: 20px">
+          <input matInput [disabled]="!edited" type="test" placeholder="Note Title" [(ngModel)]="title">
+        </mat-form-field>
+      
+        <mat-form-field style="font-size: 20px">
+          <textarea matInput [disabled]="!edited" placeholder="Note Content" style="height: 150px;" [(ngModel)]="content"></textarea>
+        </mat-form-field>
+      
+        <div fxLayoutAlign="center center" class="pt-24 pb-16" style="padding: 24px 0 16px">
+          <button mat-raised-button (click)="createNote()" *ngIf="mode === 'create'" style="background-color: #880e4f; color: #fff; margin-right: 20px">Create</button>
+          <button mat-raised-button (click)="saveNote()"  *ngIf="edited"  style="background-color: #880e4f; color: #fff; margin-right: 20px">Save</button>
+          <button mat-raised-button (click)="editNote()" *ngIf="mode === 'view' && !edited"  style="background-color: #880e4f; color: #fff; margin-right: 20px">Edit</button>
+          <button mat-raised-button (click)="back()" style="color: #880e4f">Back</button>
+        </div>
+      </div>
+</div>

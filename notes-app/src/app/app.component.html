@@ -1,4 +1,7 @@
 <div class="header">
-
+    <div class="header-container"  fxLayout="row" fxLayoutAlign="space-between center">
+        <span class="mat-headline" style="margin: 0">Notes App</span>
+        <button mat-button (click)="logout()" style="border: 1px solid #880e4f; color: #880e4f; margin-right: 20px">Log out</button>
+    </div>
 </div>
 <router-outlet style="height: 100%; position: relative; top: 60px"></router-outlet>

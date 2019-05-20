@@ -25,7 +25,8 @@ export class AppService {
   }
 
   api_delete(path){
-
+    return this.http.delete(this.url + path);
   }
 
+  
 }
